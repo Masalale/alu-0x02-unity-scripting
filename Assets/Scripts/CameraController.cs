@@ -12,10 +12,8 @@ public class CameraController : MonoBehaviour
             player = GameObject.Find("Player");
         }
 
-        if (transform.rotation == Quaternion.identity)
-        {
-            transform.rotation = Quaternion.Euler(65f, 0f, 0f);
-        }
+        transform.position = new Vector3(22f, 26f, 7f);
+        transform.rotation = Quaternion.Euler(65f, 0f, 0f);
 
         if (player != null)
         {
@@ -27,7 +25,11 @@ public class CameraController : MonoBehaviour
     {
         if (player != null)
         {
-            transform.position = player.transform.position + offset;
+            transform.position = new Vector3(
+                player.transform.position.x + offset.x,
+                26f,
+                player.transform.position.z + offset.z
+            );
         }
     }
 }

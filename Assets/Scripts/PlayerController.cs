@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 500f;
+    public float speed = 800f;
     public int health = 5;
     private int score = 0;
     private Rigidbody rb;
@@ -11,6 +11,11 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.constraints = RigidbodyConstraints.FreezePositionY;
+            rb.drag = 1.2f;
+        }
     }
 
     void FixedUpdate()
@@ -20,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
-        rb.AddForce(movement * speed);
+        rb.AddForce(movement * speed * Time.deltaTime);
     }
 
     void Update()
