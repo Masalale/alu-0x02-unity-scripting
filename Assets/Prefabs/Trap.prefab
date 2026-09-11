@@ -52,7 +52,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 33333333444455556666777788889993, type: 2}
+  - {fileID: 2100000, guid: 9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c, type: 2}
 --- !u!64 &6400000
 MeshCollider:
   m_ObjectHideFlags: 0
